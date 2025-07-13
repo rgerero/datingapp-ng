@@ -1,0 +1,19 @@
+dotnet new webapi -h
+dotnet new list
+dotnet sln -h
+dotnet sln list
+dotnet dev-certs -h
+dotnet dev-certs https --check
+
+dotnet new sln
+dotnet new webapi -controllers -n API
+dotnet sln add API
+--use the below if you encounter self signed cert issue
+dotnet dev-certs https --clean
+dotnet dev-certs https --trust
+--end
+
+----extensions----
+c# dev kit
+material icon theme
+nuget gallery
