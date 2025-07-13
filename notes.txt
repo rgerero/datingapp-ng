@@ -17,3 +17,28 @@ dotnet dev-certs https --trust
 c# dev kit
 material icon theme
 nuget gallery
+sqlite viewer
+sqlite
+
+----nuget packages----
+Microsoft.entityframeworkcore.design
+Microsoft.entityframeworkcore.sqlite
+
+
+----tips----
+File > auto save - this is to auto save changes
+Settings > Terminal Suggest enabled - to enable the intellisense
+----for long path in the terminal----
+cmd         - just type "prompt $g"
+powershell  - type "$profile"
+            - if ps1 not exist create it and put the below code then open new terminal.
+            function prompt {
+                $p = -path
+                "$p> "
+            }
+            or this one to display the project folder
+            function prompt {
+                $currentPath = Get-Location
+                $projectName = Split-Path $currentPath.Path -Leaf
+                "$projectName> "
+            }
