@@ -24,6 +24,10 @@ sqlite
 Microsoft.entityframeworkcore.design
 Microsoft.entityframeworkcore.sqlite
 
+----tools
+dotnet tool install -g dotnet-ef
+ - dotnet ef migrations add InitialCreate -o Data/Migrations
+ - dotnet ef database update
 
 ----tips----
 File > auto save - this is to auto save changes
@@ -42,3 +46,11 @@ powershell  - type "$profile"
                 $projectName = Split-Path $currentPath.Path -Leaf
                 "$projectName> "
             }
+
+
+----Insert sample data into a Users table----
+INSERT INTO Users (Id, Name, Email)
+VALUES
+    ('bob-id', 'bob', 'bob@gmail.com'),
+    ('tom-id', 'tom', 'tom@gmail.com'),
+    ('jane-id', 'jane', 'jane@gmail.com');
