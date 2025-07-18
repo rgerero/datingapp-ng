@@ -524,5 +524,5 @@ yarn.lock
 # Angular CLI cache
 .angular/cache/
 
-# Chrome debug log
+# Chrome debug log 
 chrome-debug.log

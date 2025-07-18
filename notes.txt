@@ -54,3 +54,9 @@ VALUES
     ('bob-id', 'bob', 'bob@gmail.com'),
     ('tom-id', 'tom', 'tom@gmail.com'),
     ('jane-id', 'jane', 'jane@gmail.com');
+
+-----git repo----------
+git clone https://github.com/rgerero/datingapp-ng.git
+-----git commands------
+remove track files in a cache
+ - git rm -r --cached .
