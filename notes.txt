@@ -1,24 +1,11 @@
-dotnet new webapi -h
-dotnet new list
-dotnet sln -h
-dotnet sln list
-dotnet dev-certs -h
-dotnet dev-certs https --check
-
-dotnet new sln
-dotnet new webapi -controllers -n API
-dotnet sln add API
---use the below if you encounter self signed cert issue
-dotnet dev-certs https --clean
-dotnet dev-certs https --trust
---end
-
 ----extensions----
 c# dev kit
 material icon theme
 nuget gallery
 sqlite viewer
 sqlite
+Angular Language Service
+ESlint
 
 ----nuget packages----
 Microsoft.entityframeworkcore.design
@@ -29,10 +16,12 @@ dotnet tool install -g dotnet-ef
  - dotnet ef migrations add InitialCreate -o Data/Migrations
  - dotnet ef database update
 
-----tips----
+--------------==Setting Tips==---------------
 File > auto save - this is to auto save changes
 Settings > Terminal Suggest enabled - to enable the intellisense
-----for long path in the terminal----
+Settings > search 'brackets' > auto closing > always 
+Settings > search 'linked' > link editing > checked
+-------------for long path in the terminal
 cmd         - just type "prompt $g"
 powershell  - type "$profile"
             - if ps1 not exist create it and put the below code then open new terminal.
@@ -47,7 +36,6 @@ powershell  - type "$profile"
                 "$projectName> "
             }
 
-
 ----Insert sample data into a Users table----
 INSERT INTO Users (Id, Name, Email)
 VALUES
@@ -55,8 +43,35 @@ VALUES
     ('tom-id', 'tom', 'tom@gmail.com'),
     ('jane-id', 'jane', 'jane@gmail.com');
 
------git repo----------
+ -----other installer----
+ install chocolatey
+    - powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
+install node js
+    - choco install nodejs --version="22.17.1"
+install angular
+    - npm install -g @angular/cli
+
+--------------==CLI Commands==--------------------
+----------------angular
+ng new client
+ng serve
+----------------dotnet
+dotnet new webapi -h
+dotnet new list
+dotnet sln -h
+dotnet sln list
+dotnet dev-certs -h
+dotnet dev-certs https --check
+
+dotnet new sln
+dotnet new webapi -controllers -n API
+dotnet sln add API
+    --use the below if you encounter self signed cert issue
+    dotnet dev-certs https --clean
+    dotnet dev-certs https --trust
+    --end
+dotnet watch
+----------------git
 git clone https://github.com/rgerero/datingapp-ng.git
------git commands------
 remove track files in a cache
  - git rm -r --cached .
