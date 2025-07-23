@@ -1,0 +1,4 @@
+1. blocked by CORS policy
+    - in API add build.Service.AddCors()
+    - add below code under http pipeline 
+        app.UseCors(options => x.AlloyAnyheader.Allowanymethod().withorigins("http://localhost:4200","https://localhost:4200"))

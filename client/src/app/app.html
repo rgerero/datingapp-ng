@@ -1,1 +1,9 @@
 <h1>{{title()}}</h1>
+
+<ul>
+    @for (m of members(); track $index) {
+        <li>
+             {{m.id}} - {{m.displayName}}
+        </li>
+    }
+</ul>
