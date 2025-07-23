@@ -24,6 +24,9 @@ install node js
 install angular
     - npm install -g @angular/cli
 
+-----Styling----
+Tailwind and DaisyUI - since its a framework not dependent to angular unlike 3rd party tools
+
 --------------==Setting Tips==---------------
 File > auto save - this is to auto save changes
 Settings > Terminal Suggest enabled - to enable the intellisense
@@ -31,6 +34,8 @@ Settings > search 'brackets' > auto closing > always
 Settings > search 'linked' > link editing > checked
 -------------for long path in the terminal
 cmd         - just type "prompt $g"
+gitbash     - export PS1="\W\$ "
+            - echo 'export PS1="\W\$ "' >> ~/.bashrc (to be permanent)
 powershell  - type "$profile"
             - if ps1 not exist create it and put the below code then open new terminal.
             function prompt {
@@ -52,7 +57,37 @@ VALUES
     ('jane-id', 'jane', 'jane@gmail.com');
 
 --------------==Angular Life Cycle==--------------------
+ngOnChanges
+Called when input properties change (runs before anything else if there are @Input properties).
 
+ngOnInit
+Called once after the first ngOnChanges. Good for initialization logic (fetch data, set up state).
+
+ngDoCheck
+Called during every change detection run (custom change detection).
+
+ngAfterContentInit
+Called once after Angular projects external content into the component (using <ng-content>).
+
+ngAfterContentChecked
+Called after every check of projected content.
+
+ngAfterViewInit
+Called once after the component’s view and child views are initialized.
+
+ngAfterViewChecked
+Called after every check of the component’s view and child views.
+
+ngOnDestroy
+Called just before Angular destroys the component (cleanup, unsubscribe, remove listeners).
+
+Summary:
+
+Initialization: ngOnChanges → ngOnInit
+Change detection: ngDoCheck
+Content projection: ngAfterContentInit → ngAfterContentChecked
+View initialization: ngAfterViewInit → ngAfterViewChecked
+Cleanup: ngOnDestroy
 
 --------------==CLI Commands==--------------------
 ----------------angular
