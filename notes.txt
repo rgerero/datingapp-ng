@@ -6,6 +6,7 @@ sqlite viewer
 sqlite
 Angular Language Service
 ESlint
+tailwind intellisense
 
 ----nuget packages----
 Microsoft.entityframeworkcore.design
@@ -23,6 +24,29 @@ install node js
     - choco install nodejs --version="22.17.1"
 install angular
     - npm install -g @angular/cli
+mkcert -install
+mkdir ssl
+cd ssl
+mkcert localhost
+angular.json > serve > builder
+    "options": {
+        "ssl": true,
+        "sslCert": "./ssl/localhost.pem",
+        "sslKey": "./ssl/localhost-key.pem"
+    }
+
+-----cert-------
+choco install mkcert
+--in vs terminal run below--
+mkcert install
+--create ssl folder and navigate to that path
+mkcert localhost
+--in angular.json file search serve add below entry--
+          "options": {
+            "ssl": true,
+            "sslCert": "./ssl/localhost.pem",
+            "sslKey": "./ssl/localhost-key.pem"
+          }
 
 -----Styling----
 Tailwind and DaisyUI - since its a framework not dependent to angular unlike 3rd party tools

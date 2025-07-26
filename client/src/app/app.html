@@ -1,10 +1,15 @@
-<h1 class="text-3xl font-bold underline">{{title()}}</h1>
+<div class="card bg-base-100 w-1/2 mx-auto p-10 mt-10 shadow-sm">
+  <h2 class="card-title">Card Title</h2>
+    <ul class="list">
+        @for (m of members(); track m.id) {
+            <li class="list-row items-center">
+                <img src="user.png" alt="user" class="size-5" /> 
+                <div>
+                  {{m.displayName}}
+                </div>
+            </li>
+        }
+    </ul>
+</div>
 
-<ul>
-    @for (m of members(); track $index) {
-        <li>
-             {{m.id}} - {{m.displayName}}
-        </li>
-    }
-</ul>
-<button class="btn btn-primary">Primary</button>
+      <button class="btn btn-primary">Date Now</button>
