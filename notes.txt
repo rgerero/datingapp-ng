@@ -14,7 +14,10 @@ Microsoft.entityframeworkcore.sqlite
 
 ----tools
 dotnet tool install -g dotnet-ef
+--execute below to prepare the migrations
  - dotnet ef migrations add InitialCreate -o Data/Migrations
+ - dotnet ef migrations add UserEntitUpdated
+--execute below to apply in the database
  - dotnet ef database update
 
 -----Installer----
