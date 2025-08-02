@@ -11,6 +11,8 @@ tailwind intellisense
 ----nuget packages----
 Microsoft.entityframeworkcore.design
 Microsoft.entityframeworkcore.sqlite
+System.IdentityModel.Tokens.Jwt
+Microsoft.IdentityModel.Tokens
 
 ----tools
 dotnet tool install -g dotnet-ef
@@ -21,6 +23,7 @@ dotnet tool install -g dotnet-ef
  - dotnet ef database update
 ---
  - dotnet ef database drop 
+ 
 -----Installer----
  install chocolatey
     - powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
@@ -54,6 +57,9 @@ mkcert localhost
 
 -----Styling----
 Tailwind and DaisyUI - since its a framework not dependent to angular unlike 3rd party tools
+
+-----useful url----
+jwt.io
 
 --------------==Setting Tips==---------------
 File > auto save - this is to auto save changes
@@ -141,3 +147,8 @@ dotnet watch
 git clone https://github.com/rgerero/datingapp-ng.git
 remove track files in a cache
  - git rm -r --cached .
+ 
+--------------==builder service life time==--------------------
+Singleton   - Only one instance is created and shared for the whole application
+Scoped      - One instance is created for each web request
+Transiet    - A new instance is created every time the service is needed.

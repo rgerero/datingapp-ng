@@ -3,16 +3,18 @@ using System.Security.Cryptography;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
+using API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    public class AccountController(AppDbContext context) : BaseApiController
+    public class AccountController(AppDbContext context, ITokenInterface tokenService) : BaseApiController
     {
         [HttpPost("register")]  //api/account/register
-        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
             if(await EmailExists(registerDto.Email))
             {
@@ -30,11 +32,18 @@ namespace API.Controllers
 
             context.Users.Add(user);
             await context.SaveChangesAsync();
-
-            return user;
+            
+            return new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                DisplayName = user.DisplayName,
+                Token = tokenService.CreateToken(user),
+            };
         }
 
-        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        [HttpPost("login")]  //api/account/login
+        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await context.Users.SingleOrDefaultAsync(x => x.Email == loginDto.Email);
             if (user == null) return Unauthorized("Invalid email");
@@ -47,7 +56,13 @@ namespace API.Controllers
                 if (computedHash[i] != user.Passwordhash[i]) return Unauthorized("Invalid password");
             }
 
-            return user;
+            return new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                DisplayName = user.DisplayName,
+                Token = tokenService.CreateToken(user),
+            };
         }
 
         public async Task<bool> EmailExists(string email)
