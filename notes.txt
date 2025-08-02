@@ -13,6 +13,7 @@ Microsoft.entityframeworkcore.design
 Microsoft.entityframeworkcore.sqlite
 System.IdentityModel.Tokens.Jwt
 Microsoft.IdentityModel.Tokens
+Microsoft.AspNetCore.Authentication.JwtBearer
 
 ----tools
 dotnet tool install -g dotnet-ef
@@ -23,7 +24,7 @@ dotnet tool install -g dotnet-ef
  - dotnet ef database update
 ---
  - dotnet ef database drop 
- 
+
 -----Installer----
  install chocolatey
     - powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
