@@ -61,7 +61,7 @@ Tailwind and DaisyUI - since its a framework not dependent to angular unlike 3rd
 
 -----useful url----
 jwt.io
-
+angular.dev
 --------------==Setting Tips==---------------
 File > auto save - this is to auto save changes
 Settings > Terminal Suggest enabled - to enable the intellisense
