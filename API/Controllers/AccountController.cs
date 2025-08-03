@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Interfaces;
 using API.Services;
 using Microsoft.AspNetCore.Http;
@@ -33,13 +34,7 @@ namespace API.Controllers
             context.Users.Add(user);
             await context.SaveChangesAsync();
             
-            return new UserDto
-            {
-                Id = user.Id,
-                Email = user.Email,
-                DisplayName = user.DisplayName,
-                Token = tokenService.CreateToken(user),
-            };
+            return user.ToDto(tokenService);
         }
 
         [HttpPost("login")]  //api/account/login
@@ -56,13 +51,7 @@ namespace API.Controllers
                 if (computedHash[i] != user.Passwordhash[i]) return Unauthorized("Invalid password");
             }
 
-            return new UserDto
-            {
-                Id = user.Id,
-                Email = user.Email,
-                DisplayName = user.DisplayName,
-                Token = tokenService.CreateToken(user),
-            };
+            return user.ToDto(tokenService);
         }
 
         public async Task<bool> EmailExists(string email)
