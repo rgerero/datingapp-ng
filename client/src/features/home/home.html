@@ -15,7 +15,7 @@
         </div>
     } @else {
         <div class="w-full">
-            <app-register [membersFromHome]="membersFromApp" (cancelRegister)="showRegister($event)" />
+            <app-register (cancelRegister)="showRegister($event)" />
         </div>
     }
 </div>
