@@ -127,10 +127,15 @@ Content projection: ngAfterContentInit → ngAfterContentChecked
 View initialization: ngAfterViewInit → ngAfterViewChecked
 Cleanup: ngOnDestroy
 
+---------------------Angular notes---------
+observable - lazy, read multiple values,  can cancel
+ToPromise - not lazy, can read 1 value, cannot cancel
+
 --------------==CLI Commands==--------------------
 ----------------angular
 ng new client
 ng serve
+ng g c (new components) (add --dry-run to see how it works.)
 ----------------dotnet
 dotnet new webapi -h
 dotnet new list
