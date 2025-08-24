@@ -12,7 +12,7 @@ export class Home {
   @Input({ required: true }) membersFromApp: User[] = [];
   protected IsRegistered=signal(false);
 
-  showRegister(){
-    this.IsRegistered.set(true);
+  showRegister(value: boolean) {
+    this.IsRegistered.set(value);
   }
 }

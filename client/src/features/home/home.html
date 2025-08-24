@@ -8,14 +8,14 @@
                 <h1 class="text-5xl font-bold">Find your match</h1>
                 <p class="py-6">Sign up now!</p>
                 <div class="flex items-center gap-3">
-                    <button class="btn btn-primary btn-lg" (click)="showRegister()">Register</button>
+                    <button class="btn btn-primary btn-lg" (click)="showRegister(true)">Register</button>
                     <button class="btn btn-info btn-lg">Learn more</button>
                 </div>
             </div>
         </div>
     } @else {
         <div class="w-full">
-            <app-register [membersFromHome]="membersFromApp" />
+            <app-register [membersFromHome]="membersFromApp" (cancelRegister)="showRegister($event)" />
         </div>
     }
 </div>
