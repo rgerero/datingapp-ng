@@ -1,16 +1,2 @@
 <app-nav />
-<div class="card bg-base-100 w-1/2 mx-auto p-10 mt-30 shadow-sm">
-  <h2 class="card-title">Card Title</h2>
-    <ul class="list">
-        @for (m of members(); track m.id) {
-            <li class="list-row items-center">
-                <img src="user.png" alt="user" class="size-5" /> 
-                <div>
-                  {{m.displayName}}
-                </div>
-            </li>
-        }
-    </ul>
-</div>
-
-<button class="btn btn-primary">Date Now</button>
+<app-home [membersFromApp]="members()" />
