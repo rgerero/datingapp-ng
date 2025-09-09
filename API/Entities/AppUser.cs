@@ -9,4 +9,7 @@ public class AppUser
     public required byte[] Passwordhash { get; set; }
     public required byte[] PasswordSalt { get; set; }
 
+    //navigation property
+    public Member Member { get; set; } = null!;
+
 }

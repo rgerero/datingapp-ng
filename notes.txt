@@ -24,6 +24,8 @@ dotnet tool install -g dotnet-ef
  - dotnet ef database update
 ---
  - dotnet ef database drop 
+--- use below to check any pending before doing "migrations add"
+ - dotnet ef migrations has-pending-model-changes
 
 -----Installer----
  install chocolatey

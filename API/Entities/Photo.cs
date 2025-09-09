@@ -9,5 +9,6 @@ public class Photo
     public string? PublicId { get; set; }
 
     //navigation property
-    public Member Member { get; set; }=null!;
+    public Member Member { get; set; } = null!;
+    public string MemberId { get; set; } = null!;
 }
