@@ -67,6 +67,7 @@ angular.dev
 daisyui.com
 flexboxfroggy.com
 heroicons.com
+https://transform.tools/json-to-typescript
 --------------==Setting Tips==---------------
 File > auto save - this is to auto save changes
 Settings > Terminal Suggest enabled - to enable the intellisense
