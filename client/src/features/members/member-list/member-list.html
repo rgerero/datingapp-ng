@@ -1,1 +1,5 @@
-<p>member-list works!</p>
+<div>
+    @for (item of members$ | async; track item.Id) {
+        <div>{{item.displayName}}</div>
+    }
+</div>

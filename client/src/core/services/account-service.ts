@@ -23,7 +23,7 @@ export class AccountService {
   }
   
   login(creds: LoginCreds) {
-    return this.http.post<User>(`${this.baseUrl}/account/login`, creds).pipe(
+    return this.http.post<User>(`${this.baseUrl}account/login`, creds).pipe(
       tap(user => {
         if (user) {
           this.setCurrentUser(user);
