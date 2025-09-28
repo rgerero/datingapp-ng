@@ -1,15 +1,15 @@
 export interface Member {
-  Id: string
-  Email: string
-  Gender: string
-  DateOfBirth: string
-  DisplayName: string
-  Created: string
-  LastActive: string
-  Description?: string
-  City: string
-  Country: string
-  ImageUrl?: string
+  id: string
+  email: string
+  gender: string
+  dateOfBirth: string
+  displayName: string
+  created: string
+  lastActive: string
+  description?: string
+  city: string
+  country: string
+  imageUrl?: string
 }
 
 export interface Photo {
