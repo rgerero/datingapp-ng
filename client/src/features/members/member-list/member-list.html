@@ -1,5 +1,5 @@
-<div>
+<div class="grid grid-cols-5">
     @for (item of members$ | async; track item.id) {
-        <div>{{item.displayName}}</div>
+        <app-member-card [member]="item"></app-member-card>
     }
 </div>
