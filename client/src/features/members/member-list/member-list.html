@@ -1,5 +1,5 @@
 <div>
-    @for (item of members$ | async; track item.Id) {
+    @for (item of members$ | async; track item.id) {
         <div>{{item.displayName}}</div>
     }
 </div>

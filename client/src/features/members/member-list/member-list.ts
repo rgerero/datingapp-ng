@@ -6,7 +6,7 @@ import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-member-list',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe], //this will handle the subscription and unsubscription automatically
   templateUrl: './member-list.html',
   styleUrl: './member-list.css'
 })
@@ -15,6 +15,7 @@ export class MemberList {
   protected members$: Observable<Member[]>;
   
   constructor() {
+    //$ means its an observable
     this.members$ = this.memberService.getMembers();    
   }
 }
