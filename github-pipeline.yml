@@ -1,0 +1,11 @@
+trigger: none
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- checkout: main
+
+- powershell: |
+    Write-Host "Repo pulled from GitLab"
+    Get-ChildItem
