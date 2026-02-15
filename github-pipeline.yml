@@ -4,7 +4,7 @@ pool:
   vmImage: windows-latest
 
 steps:
-- checkout: main
+- checkout: self
 
 - powershell: |
     Write-Host "Repo pulled from GitLab"
